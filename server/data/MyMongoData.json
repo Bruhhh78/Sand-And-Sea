@@ -1,0 +1,75 @@
+[
+    {
+      "id": "66f6726e5ef9b7d4dd88d69d",
+      "title": "Pumkin pumkin hello Hunnuy bunny",
+      "description": "ts a very great place to live",
+      "price": 1230000,
+      "address": "falanadhimaka",
+      "city": "Mumbaii",
+      "country": "Indiaa",
+      "image": "newpicc.jpg",
+      "facilities": [
+        {
+          "beds": 2
+        }
+      ],
+      "userEmail": "suiiii@suiiii.com",
+      "createdAt": "2024-09-27T08:53:02.497Z",
+      "updatedAt": "2024-09-27T08:53:02.497Z"
+    },
+    {
+      "id": "66eec4ab819167422ed117de",
+      "title": "A Very Beautiful House",
+      "description": "It's a very great place to live",
+      "price": 123000,
+      "address": "falanadhimaka",
+      "city": "Mumbai",
+      "country": "India",
+      "image": "newpic.jpg",
+      "facilities": [
+        {
+          "beds": 2
+        }
+      ],
+      "userEmail": "danesh@danesh.com",
+      "createdAt": "2024-09-21T13:05:47.178Z",
+      "updatedAt": "2024-09-21T13:05:47.178Z"
+    },
+    {
+      "id": "66ee9a29154a803d4e143710",
+      "title": "A Beautiful House",
+      "description": "It's a very great place to live",
+      "price": 23000,
+      "address": "falanadhimaka",
+      "city": "Fatehpur",
+      "country": "India",
+      "image": "newpic.jpg",
+      "facilities": [
+        {
+          "beds": 2
+        }
+      ],
+      "userEmail": "testing@testing.com",
+      "createdAt": "2024-09-21T10:04:25.643Z",
+      "updatedAt": "2024-09-21T10:04:25.643Z"
+    },
+    {
+      "id": "66ee931608a563a1ec751170",
+      "title": "Beautiful House",
+      "description": "It's a great place to live",
+      "price": 10000,
+      "address": "falanadhimaka",
+      "city": "Lucknow",
+      "country": "India",
+      "image": "newpic.jpg",
+      "facilities": [
+        {
+          "beds": 2
+        }
+      ],
+      "userEmail": "anmolsrivastava@gmail.com",
+      "createdAt": "2024-09-21T09:34:13.868Z",
+      "updatedAt": "2024-09-21T09:34:13.868Z"
+    }
+  ]
+

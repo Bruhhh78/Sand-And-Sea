@@ -1,0 +1,17 @@
+{
+  "data": {
+    "title": "A Beautiful House",
+    "description": "It's a very great place to live",
+    "price": 23000,
+    "address": "falanadhimaka",
+    "city": "Fatehpur",
+    "country": "India",
+    "image": "newpic.jpg",
+    "facilities": [
+      {
+        "beds": 2
+      }
+    ],
+    "userEmail": "testing@testing.com"
+  }
+}
