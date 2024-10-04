@@ -5,6 +5,8 @@ import OutsideClickHandler from "react-outside-click-handler";
 import { Link, NavLink } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
 import ProfileMenu from "../ProfileMenu/ProfileMenu";
+// import { useAuth0 } from "@auth0/auth0-react";
+// import ProfileMenu from "../ProfileMenu/ProfileMenu";
 import { MantineProvider } from "@mantine/core";
 
 const Header = () => {

@@ -38,14 +38,3 @@ export const getProperty = async (id) => {
     throw error; // Rethrow the error for further handling
   }
 };
-
-// Create a user
-export const createUser = async (email) => {
-  try {
-    const response = await api.post(`/user/register/`, { email });
-    return handleResponse(response); // Handle response and check for errors
-  } catch (error) {
-    toast.error("Something went wrong while creating the user, please try again");
-    throw error; // Rethrow the error for further handling
-  }
-};

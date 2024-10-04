@@ -4,44 +4,48 @@ import Footer from "../Footer/Footer";
 import { Outlet } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
 import UserDetailContext from "../../context/UserDetailContext";
-import { useMutation } from "react-query";
-import { createUser } from "../../utils/api";
+// import { useMutation } from "react-query";
+// import { createUser } from "../../utils/api";
+import axios from "axios";
 
 const Layout = () => {
-
-  const { isAuthenticated, user, getAccessTokenWithPopup } = useAuth0();
+  const { isAuthenticated, user } = useAuth0();
   const { setUserDetails } = useContext(UserDetailContext);
 
-  const { mutate } = useMutation({
-    mutationKey: [user?.email],
-    mutationFn: (token) => createUser(user?.email, token),
-  });
-
   useEffect(() => {
-    const getTokenAndRegsiter = async () => {
+    const registerUser = async () => {
+      if (isAuthenticated) {
+        try {
+          // Assuming user object contains the necessary fields (email, name, etc.)
+          const userData = {
+            email: user.email,
+            // You may want to add additional fields if necessary
+          };
 
-      const res = await getAccessTokenWithPopup({
-        authorizationParams: {
-          audience: "https://dev-bruhhh.us.auth0.com/api/v2/",
-          scope: "openid profile email",
-        },
-      });
-      console.log("accessToken:",res)
-      localStorage.setItem("access_token", res);
-      setUserDetails((prev) => ({ ...prev, token: res }));
-      mutate(res)
+          // Call the API to create the user if they do not exist
+          const response = await axios.post(
+            "http://localhost:8000/api/user/register",
+            userData
+          );
+          console.log(response.data); // Log the response for debugging
+          setUserDetails(userData); // Optionally set user details in context
+        } catch (error) {
+          console.error(
+            "Error during user registration:",
+            error.response ? error.response.data : error.message
+          );
+        }
+      }
     };
 
-
-    isAuthenticated && getTokenAndRegsiter();
-  }, [isAuthenticated]);
-
+    registerUser();
+  }, [isAuthenticated, user, setUserDetails]);
   return (
     <>
-      <div style={{ background: "var(--black)", overflow: "hidden" }}>
+      <div style={{ background: "#7f8e9f", overflow: "hidden" }}>
         <Header />
-        <Outlet />
       </div>
+      <Outlet />
       <Footer />
     </>
   );
