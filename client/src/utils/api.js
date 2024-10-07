@@ -1,4 +1,5 @@
 import axios from "axios";
+import dayjs from "dayjs";
 import { toast } from "react-toastify";
 
 export const api = axios.create({
@@ -36,5 +37,65 @@ export const getProperty = async (id) => {
   } catch (error) {
     toast.error("Something went wrong while fetching the property");
     throw error; // Rethrow the error for further handling
+  }
+};
+
+// Function to create a user
+export const createUser = async (email, token) => {
+  try {
+    await api.post(
+      `/user/register`,
+      { email },
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      }
+    );
+  } catch (error) {
+    toast.error("Something went wrong, Please try again");
+    throw error;
+  }
+};
+
+// Function to Book a visit
+export const bookVisit = async (date, propertyId, email, token) => {
+  try {
+    await api.post(
+      `/user/bookvisit/${propertyId}`,
+      {
+        email,
+        id: propertyId,
+        date: dayjs(date).format("DD/MM/YYYY"),
+      },
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      }
+    );
+  } catch (error) {
+    toast.error("Something went wrong, Please try again");
+    throw error;
+  }
+};
+
+// Function to cancel a Booking
+export const removeBooking = async (id, email, token) => {
+  try {
+    await api.post(
+      `/user/cancelbooking/${id}`,
+      {
+        email,
+      },
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      }
+    );
+  } catch (error) {
+    toast.error("Someting went wrong, please try Again");
+    throw error;
   }
 };

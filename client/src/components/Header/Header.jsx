@@ -45,7 +45,7 @@ const Header = () => {
             {/* Login Button */}
             {!isAuthenticated ? (
               <button className="button" onClick={loginWithRedirect}>
-                Login
+                Login/SignUp
               </button>
             ) : (
               <MantineProvider>
