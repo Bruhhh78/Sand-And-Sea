@@ -99,3 +99,24 @@ export const removeBooking = async (id, email, token) => {
     throw error;
   }
 };
+
+//function to add to favourites (toFav)
+
+export const toFav = async(rid,email,token)=>{
+  try{
+    await api.post(
+      `/user/toFav/${rid}`,
+      {
+        email,
+      },
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      }
+    );
+  }catch(error){
+    toast.error("Someting went wrong, please try Again");
+    throw error;
+  }
+}

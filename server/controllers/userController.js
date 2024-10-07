@@ -1,4 +1,5 @@
 import asyncHandler from "express-async-handler";
+import { ObjectId } from 'mongodb';
 
 import { prisma } from "../config/prismaConfig.js";
 
@@ -131,7 +132,7 @@ export const toFav = asyncHandler(async (req, res) => {
       });
     }
   } catch (error) {
-    throw new Error(err.message);
+    throw new Error(error.message);
   }
 });
 
