@@ -13,7 +13,10 @@ const PORT = process.env.PORT || 3000;
 
 app.use(express.json()); // Parse JSON bodies
 app.use(cookieParser()); // Parse cookies
-app.use(cors()); // Enable CORS
+app.use(cors({
+  origin: "http://localhost:5173", // Frontend URL
+  credentials: true,
+}));
 
 app.get("/", (req, res) => {
   console.log("Backend Working!");

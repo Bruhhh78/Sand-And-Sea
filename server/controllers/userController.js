@@ -138,14 +138,24 @@ export const toFav = asyncHandler(async (req, res) => {
 //funtion to get all favourite list of a user
 
 export const getAllFavourites = asyncHandler(async (req, res) => {
-  const { email } = req.body;
+  const { email } = req.query; // Get email from query parameters
   try {
+    if (!email) {
+      return res.status(400).json({ message: "Email is required" }); // Ensure email is present
+    }
+
     const favResd = await prisma.user.findUnique({
       where: { email },
       select: { favResidenciesID: true },
     });
-    res.status(200).send(favResd);
+
+    if (!favResd) {
+      return res.status(404).json({ message: "No favourites found for this user" });
+    }
+
+    res.status(200).json(favResd);
   } catch (error) {
-    throw new Error(err.message);
+    res.status(500).json({ message: error.message });
   }
 });
+

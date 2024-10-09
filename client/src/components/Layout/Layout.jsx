@@ -5,34 +5,30 @@ import { Outlet } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
 import UserDetailContext from "../../context/UserDetailContext";
 import { createUser } from "../../utils/api";
-// import useFavourites from "../../hooks/useFavourites";
-// import useBookings from "../../hooks/useBookings";
+import useFavourites from "../../hooks/useFavourites";
 
 const Layout = () => {
-
-  // useFavourites();
-  // useBookings();
+  useFavourites();
 
   const { isAuthenticated, user, getAccessTokenWithPopup } = useAuth0();
   const { setUserDetails } = useContext(UserDetailContext);
 
+  // Get access token and register user if authenticated
   useEffect(() => {
     const getTokenAndRegister = async () => {
       try {
         const token = await getAccessTokenWithPopup({
           authorizationParams: {
             audience: "https://dev-bruhhh.us.auth0.com/api/v2/",
-            scope: "openid profile email",
+            scope: "openid profile email", // Email scope included
           },
         });
 
-        // Store the access token in localStorage
+        // Store token and update context
         localStorage.setItem("access_token", token);
-
-        // Update user details with the token
         setUserDetails((prev) => ({ ...prev, token }));
 
-        // Register user using the token
+        // Register user with token if email is available
         if (user?.email) {
           await createUser(user.email, token);
         }
@@ -51,7 +47,7 @@ const Layout = () => {
       <div style={{ background: "#7f8e9f", overflow: "hidden" }}>
         <Header />
       </div>
-        <Outlet />
+      <Outlet />
       <Footer />
     </>
   );
