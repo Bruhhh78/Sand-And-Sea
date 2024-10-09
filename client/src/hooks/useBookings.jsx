@@ -12,7 +12,7 @@ const useBookings = () => {
 
   // Function to get all bookings
   const getAllBooks = async (email, token) => {
-    console.log("Bearer_token_from_useBookings: " + token);
+    // console.log("Bearer_token_from_useBookings: " + token); //log to check bearer token
     if (!token || !email) return;
 
     try {
@@ -27,7 +27,6 @@ const useBookings = () => {
           },
         }
       );
-      console.log("Bookings fetched: ", res.data.bookedVisits); // Log the response for debugging
       return res.data.bookedVisits; // Return the fetched bookings
     } catch (e) {
       toast.error("Something went wrong while fetching Bookings");

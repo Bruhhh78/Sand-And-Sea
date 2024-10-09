@@ -13,7 +13,7 @@ const useFavourites = () => {
 
   // Function to get all favourites
   const getAllFav = async (email, token) => {
-    console.log("Bearer_token_from_useFavourites: " + token);
+    // console.log("Bearer_token_from_useFavourites: " + token); //log to check bearer token
     if (!token || !email) return;
 
     try {

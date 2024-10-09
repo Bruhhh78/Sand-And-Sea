@@ -1,5 +1,4 @@
 export const sliderSetings = {
-  slidesPreview: 1,
   spaceBetween: 50,
   breakpoints: {
     480: {
@@ -16,6 +15,7 @@ export const sliderSetings = {
     },
   },
 };
+
 
 export const updateFavourites = (id, favourites) => {
   if (favourites.includes(id)) {

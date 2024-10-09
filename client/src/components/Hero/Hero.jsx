@@ -1,7 +1,7 @@
 import React from "react";
 import "./Hero.css";
 import CountUp from "react-countup";
-import { motion, spring } from "framer-motion";
+import { motion } from "framer-motion";
 import SearchBar from "../SearchBar/SearchBar";
 
 const Hero = () => {
@@ -13,8 +13,8 @@ const Hero = () => {
           <div className="hero-title">
             <div className="orange-circle" />
             <motion.h1
-              initial={{ y: "2rem", opacity: "0" }}
-              animate={{ y: "0", opacity: "1" }}
+              initial={{ y: "2rem", opacity: 0 }} // Changed opacity to a number
+              animate={{ y: "0", opacity: 1 }}
               transition={{ duration: 4, type: "spring" }}
             >
               Discover <br />
@@ -34,7 +34,7 @@ const Hero = () => {
           </div>
 
           {/* SearchBar */}
-          <SearchBar/>
+          <SearchBar />
 
           {/* Stats */}
           <div className="flexCenter stats">
@@ -70,13 +70,14 @@ const Hero = () => {
         {/* Right Side */}
         <div className="flexCenter hero-right">
           <motion.div
-          initial={{x:"7rem",opacity:0}}
-          animate={{x:0, opacity:1}}
-          transition={{
-            duration:4,
-            type:"spring",
-          }}
-          className="image-container">
+            initial={{ x: "7rem", opacity: 0 }} // Changed opacity to a number
+            animate={{ x: 0, opacity: 1 }}
+            transition={{
+              duration: 4,
+              type: "spring",
+            }}
+            className="image-container"
+          >
             <img src="./hero-image.png" alt="heroImg" />
           </motion.div>
         </div>
