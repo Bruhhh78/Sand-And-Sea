@@ -52,17 +52,24 @@ export const bookVisit = asyncHandler(async (req, res) => {
 
 // Function to get all the bookings
 export const getAllBookings = asyncHandler(async (req, res) => {
-  const { email } = req.body;
+  const { email } = req.query; // Change req.body to req.query
   try {
     const bookings = await prisma.user.findUnique({
       where: { email },
       select: { bookedVisits: true },
     });
+
+    if (!bookings) {
+      return res.status(404).send({ message: "No bookings found for this user." });
+    }
+
     res.status(200).send(bookings);
   } catch (error) {
-    throw new Error(err.message);
+    console.error("Error fetching bookings:", error.message); // Log the error for debugging
+    return res.status(500).send({ message: "Internal server error." }); // Send a 500 response
   }
 });
+
 
 // Function to Cancel the bookings
 
