@@ -20,7 +20,7 @@ const App = () => {
   });
 
   return (
-    <UserDetailContext.Provider value={{userDetails,setUserDetails}}>
+    <UserDetailContext.Provider value={{ userDetails, setUserDetails }}>
       <QueryClientProvider client={queryClient}>
         <BrowserRouter>
           <Suspense fallback={<div>Loading...</div>}>

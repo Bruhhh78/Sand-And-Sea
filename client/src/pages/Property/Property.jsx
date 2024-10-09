@@ -3,7 +3,6 @@ import { useMutation, useQuery } from "react-query";
 import { useLocation } from "react-router-dom";
 import { getProperty, removeBooking } from "../../utils/api";
 import { PuffLoader } from "react-spinners";
-import { AiFillHeart } from "react-icons/ai";
 import { FaShower } from "react-icons/fa";
 import { MdLocationCity, MdMeetingRoom } from "react-icons/md";
 import { AiTwotoneCar } from "react-icons/ai";
