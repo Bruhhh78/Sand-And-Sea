@@ -4,7 +4,7 @@ import { prisma } from "../config/prismaConfig.js";
 
 // Function to create a new user in the database
 export const createUser = asyncHandler(async (req, res) => {
-  console.log("Creating a User...");
+  // console.log("Creating a User...");
 
   let { email } = req.body;
   // console.log(email);
