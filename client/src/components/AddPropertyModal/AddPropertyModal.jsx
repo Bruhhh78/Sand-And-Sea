@@ -18,13 +18,15 @@ const AddPropertyModal = ({ opened, setOpened }) => {
       city: "",
       address: "",
       image: null,
-      facilities: {
-        bedrooms: 0,
-        parkigs: 0,
-        bathrooms: 0,
-      },
+      facilities: [
+        {
+          bedrooms: 0,
+          parkigs: 0,
+          bathrooms: 0,
+        },
+      ],
       userEmail: user?.email,
-    },
+    }
   });
 
   const nextStep = () => {
