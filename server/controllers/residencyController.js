@@ -3,6 +3,8 @@ import { prisma } from "../config/prismaConfig.js"; // Adjust the path as needed
 
 // Controller function to create a residency
 export const createResidency = asyncHandler(async (req, res) => {
+  console.log(req.body.data); // Add this line to debug
+
   const {
     title,
     description,
@@ -13,8 +15,8 @@ export const createResidency = asyncHandler(async (req, res) => {
     image,
     facilities,
     userEmail,
-  } = req.body.data;
-
+  } = req.body.data || {};
+  
   try {
     const residency = await prisma.residency.create({
       data: {

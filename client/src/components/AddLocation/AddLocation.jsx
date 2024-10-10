@@ -8,11 +8,12 @@ import Map from "../Map/Map";
 const AddLocation = ({ propertyDetails, setPropertyDetails, nextStep }) => {
   const { getAll } = useCountries();
 
+  // Ensure initial values are set to empty strings if propertyDetails is not defined
   const form = useForm({
     initialValues: {
-      country: propertyDetails?.country,
-      city: propertyDetails?.city,
-      address: propertyDetails?.address,
+      country: propertyDetails?.country || '', // Default to empty string
+      city: propertyDetails?.city || '', // Default to empty string
+      address: propertyDetails?.address || '', // Default to empty string
     },
 
     validate: {
@@ -25,11 +26,12 @@ const AddLocation = ({ propertyDetails, setPropertyDetails, nextStep }) => {
   const handleSubmit = () => {
     const { hasErrors } = form.validate();
     if (!hasErrors) {
+      const { country, city, address } = form.values; // Get values from form
       setPropertyDetails((prev) => ({
         ...prev,
-        city,
-        address,
-        country,
+        country, // Use country from form values
+        city,    // Use city from form values
+        address, // Use address from form values
       }));
       nextStep();
     }
@@ -52,8 +54,7 @@ const AddLocation = ({ propertyDetails, setPropertyDetails, nextStep }) => {
           marginTop: "3rem",
         }}
       >
-        {/* left side */}
-        {/* inputs */}
+        {/* Left side */}
         <div className="flexColStart">
           <Select
             w={"100%"}
@@ -80,8 +81,7 @@ const AddLocation = ({ propertyDetails, setPropertyDetails, nextStep }) => {
           />
         </div>
 
-        {/* right side */}
-
+        {/* Right side */}
         <div style={{ flex: 1 }}>
           <Map address={address} city={city} country={country} />
         </div>

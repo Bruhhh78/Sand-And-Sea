@@ -120,3 +120,22 @@ export const toFav = async(rid,email,token)=>{
     throw error;
   }
 }
+
+export const createResidency = async (data, token) => {
+  console.log("Data being sent:", data); // Log the data
+  try {
+    const res = await api.post(
+      `/residency/create`,
+      data, // Send the data directly
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      }
+    );
+    return res.data; // Ensure to return the response data if needed
+  } catch (error) {
+    console.error("Error creating residency:", error);
+    throw error;
+  }
+};

@@ -10,19 +10,21 @@ const AddPropertyModal = ({ opened, setOpened }) => {
   const [active, setActive] = useState(0);
   const { user } = useAuth0();
   const [propertyDetails, setPropertyDetails] = useState({
-    titile: "",
-    description: "",
-    price: 0,
-    country: "",
-    city: "",
-    address: "",
-    image: null,
-    facilities: {
-      bedrooms: 0,
-      parkigs: 0,
-      bathrooms: 0,
+    data: {
+      title: "",
+      description: "",
+      price: 0,
+      country: "",
+      city: "",
+      address: "",
+      image: null,
+      facilities: {
+        bedrooms: 0,
+        parkigs: 0,
+        bathrooms: 0,
+      },
+      userEmail: user?.email,
     },
-    userEmail: user?.email,
   });
 
   const nextStep = () => {
@@ -70,12 +72,12 @@ const AddPropertyModal = ({ opened, setOpened }) => {
             />
           </Stepper.Step>
           <Stepper.Step label="Finalizing" description="Add your Property">
-            <Facilities 
-             prevStep={prevStep}
-             propertyDetails={propertyDetails}
-             setPropertyDetails={setPropertyDetails}
-             setOpened={setOpened}
-             setActiveStep={setActive}
+            <Facilities
+              prevStep={prevStep}
+              propertyDetails={propertyDetails}
+              setPropertyDetails={setPropertyDetails}
+              setOpened={setOpened}
+              setActiveStep={setActive}
             />
           </Stepper.Step>
           <Stepper.Completed>
