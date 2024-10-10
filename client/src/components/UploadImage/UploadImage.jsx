@@ -55,11 +55,14 @@ const UploadImage = ({
         <Button className="uploadButton" variant="default" onClick={prevStep}>
           Back
         </Button>
-        <Button className="uploadButton" onClick={handleNext} disabled={!imageURL}>
+        <Button
+          className="uploadButton"
+          onClick={handleNext}
+          disabled={!imageURL}
+        >
           Next
         </Button>
       </Group>
-
     </div>
   );
 };
