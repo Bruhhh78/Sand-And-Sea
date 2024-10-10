@@ -5,13 +5,22 @@ import OutsideClickHandler from "react-outside-click-handler";
 import { Link, NavLink } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
 import ProfileMenu from "../ProfileMenu/ProfileMenu";
-// import { useAuth0 } from "@auth0/auth0-react";
-// import ProfileMenu from "../ProfileMenu/ProfileMenu";
 import { MantineProvider } from "@mantine/core";
+import AddPropertyModal from "../AddPropertyModal/AddPropertyModal";
+import useAuthCheck from "../../hooks/useAuthCheck";
 
 const Header = () => {
   const [menuOpened, setMenuOpened] = useState(false);
   const { loginWithRedirect, isAuthenticated, user, logout } = useAuth0();
+  const [modalOpened, setModalOpened] = useState(false);
+  const { validateLogin } = useAuthCheck();
+
+  
+  const handleAddPropertyCLick = () => {
+    if (validateLogin()) {
+      setModalOpened(true);
+    }
+  };
 
   const getMenuStyles = (menuOpened) => {
     if (document.documentElement.clientWidth <= 800) {
@@ -41,6 +50,10 @@ const Header = () => {
           <div className="flexCenter h-menu" style={getMenuStyles(menuOpened)}>
             <NavLink to="/properties">Properties</NavLink>
             <a href="mailto:anmolsrivastava678@gmail.com">Contact</a>
+
+            {/* add property */}
+            <div onClick={handleAddPropertyCLick}>Add Property</div>
+            <AddPropertyModal opened={modalOpened} setOpened={setModalOpened} />
 
             {/* Login Button */}
             {!isAuthenticated ? (
