@@ -9,6 +9,9 @@
     "postinstall": "prisma generate",
     "vercel-build": "prisma generate && npm run build"
   },
+  "engines": {
+    "node": "18.x"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
