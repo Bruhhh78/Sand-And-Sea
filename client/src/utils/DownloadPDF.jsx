@@ -9,7 +9,7 @@ const DownloadPDF = () => {
         href="/Airica Opp Brochure.pdf"
         download="Airica Opp Brochure.pdf"
       >
-        Airicia Adani
+        Airica Adani
       </a>
       <a
         className="btn btn-custom"
