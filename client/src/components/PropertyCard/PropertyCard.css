@@ -26,7 +26,7 @@
 
 /* Price (nth-child(3)) */
 .r-card>:nth-child(3) {
-    font-size: 0.9rem; /* Adjusted to normal size */
+    font-size: 1.2rem; /* Adjusted to normal size */
     font-weight: 600;
     color: #333; /* Darker color for better visibility */
 }
