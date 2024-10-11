@@ -10,8 +10,7 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Property from "./pages/Property/Property";
 import UserDetailContext from "./context/UserDetailContext";
-import Bookings from "./pages/Bookings/Bookings";
-import Favourites from "./pages/Favourites/Favourites";
+import ContactForm from "./components/ContactForm/ContactForm";
 
 const App = () => {
   const queryClient = new QueryClient();
@@ -33,8 +32,7 @@ const App = () => {
                   <Route index element={<Properties />} />
                   <Route path=":propertyId" element={<Property />} />
                 </Route>
-                <Route path="/bookings" element={<Bookings/>}/>
-                <Route path="/favourites" element={<Favourites/>}/>
+                <Route path="/sendMessage" element={<ContactForm/>}/>
               </Route>
             </Routes>
           </Suspense>

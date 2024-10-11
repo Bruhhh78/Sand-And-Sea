@@ -34,7 +34,7 @@ const Hero = () => {
           </div>
 
           {/* SearchBar */}
-          <SearchBar />
+          <SearchBar disabled={true} />
 
           {/* Stats */}
           <div className="flexCenter stats">
