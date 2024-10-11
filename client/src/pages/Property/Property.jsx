@@ -8,6 +8,7 @@ import { MdLocationCity, MdMeetingRoom } from "react-icons/md";
 import { AiTwotoneCar } from "react-icons/ai";
 import "./Property.css";
 import Map from "../../components/Map/Map";
+import DownloadPDF from "../../utils/DownloadPDF";
 
 const Property = () => {
   const { pathname } = useLocation();
@@ -92,6 +93,8 @@ const Property = () => {
             </div>
             {/* Booking Button */}
             <button onClick={() => navigate("/sendMessage", { replace: true })} className="button bookingButton">Book Your Visit</button>
+            {/* Download Brochure */}
+            <DownloadPDF/>
           </div>
 
           {/* right */}

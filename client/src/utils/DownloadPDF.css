@@ -1,0 +1,24 @@
+.btn-custom {
+    background-color: #28a745; /* Green color */
+    color: white; /* Text color */
+    padding: 10px 15px; /* Padding for the button */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded corners */
+    text-decoration: none; /* Remove underline from link */
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+    max-width: 200px; /* Maximum width */
+    flex: 1; /* Allow buttons to grow and fill the space */
+    margin: 5px; /* Margin for spacing */
+  }
+  
+  .btn-custom:hover {
+    background-color: #218838; /* Darker green on hover */
+  }
+  
+  /* Responsive styles */
+  @media (max-width: 576px) {
+    .btn-custom {
+      width: 100%; /* Full width on smaller screens */
+    }
+  }
+  
