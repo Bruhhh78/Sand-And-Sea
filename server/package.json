@@ -7,16 +7,12 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon index.js",
     "postinstall": "prisma generate",
-    "vercel-build": "prisma generate && npm run build",
- "build": "echo \"Nothing to build for backend\" && prisma generate"
+    "build": "echo \"Nothing to build for backend\" && prisma generate",
+    "vercel-build": "npm run build"
   },
   "engines": {
     "node": "18.x"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
   "dependencies": {
     "@prisma/client": "^5.20.0",
     "cookie-parser": "^1.4.6",
