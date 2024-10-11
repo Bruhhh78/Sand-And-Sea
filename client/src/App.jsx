@@ -38,7 +38,6 @@ const App = () => {
           </Suspense>
         </BrowserRouter>
         <ToastContainer />
-        <ReactQueryDevtools initialIsOpen={false} />
       </QueryClientProvider>
     </UserDetailContext.Provider>
   );

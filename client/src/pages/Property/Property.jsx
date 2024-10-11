@@ -93,6 +93,7 @@ const Property = () => {
             </div>
             {/* Booking Button */}
             <button onClick={() => navigate("/sendMessage", { replace: true })} className="button bookingButton">Book Your Visit</button>
+            <h3>Click to Download Brochure</h3>
             {/* Download Brochure */}
             <DownloadPDF/>
           </div>
