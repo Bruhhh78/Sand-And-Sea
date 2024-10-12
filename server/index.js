@@ -17,8 +17,8 @@ app.use(cookieParser()); // Parse cookies
 
 // CORS configuration
 app.use(cors({
-  origin: "https://sand-and-sea-iota.vercel.app", // Allow specific frontend URL
-  credentials: true, // Allow credentials (cookies, authorization headers)
+  origin: "https://sand-and-sea-iota.vercel.app/", // Frontend URL
+  credentials: true
 }));
 
 app.get("/", (req, res) => {
