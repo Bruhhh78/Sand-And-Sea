@@ -14,7 +14,7 @@ const PORT = process.env.PORT || 3000;
 app.use(express.json()); // Parse JSON bodies
 app.use(cookieParser()); // Parse cookies
 app.use(cors({
-  origin: "http://localhost:5173", // Frontend URL
+  origin: "https://sand-and-sea-frontend.vercel.app/", // Frontend URL
   credentials: true,
 }));
 
