@@ -34,7 +34,7 @@ const Header = () => {
           <div className={`flexCenter h-menu ${menuOpened ? "open" : ""}`}>
             <NavLink to="/properties">Properties</NavLink>
             <button className="button">
-              <a href="mailto:marketingsandnsea@gmail.com">Contact</a>
+              <a className="contact_button" href="mailto:marketingsandnsea@gmail.com">Contact</a>
             </button>
           </div>
         </OutsideClickHandler>
