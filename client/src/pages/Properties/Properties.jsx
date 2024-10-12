@@ -8,7 +8,7 @@ import PropertyCard from "../../components/PropertyCard/PropertyCard";
 const Properties = () => {
   const { data, isError, isLoading } = useProperties();
   const [filter, setFilter] = useState("");
-  console.log(data);
+  // console.log(data);
 
   if (isError) {
     return (
