@@ -3,7 +3,7 @@ import dayjs from "dayjs";
 import { toast } from "react-toastify";
 
 export const api = axios.create({
-  baseURL: "http://localhost:8000/api",
+  baseURL: import.meta.env.VITE_BACKEND_APIKEY,
 });
 
 // Helper function to handle API responses and errors

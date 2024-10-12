@@ -12,7 +12,7 @@ createRoot(document.getElementById("root")).render(
       authorizationParams={{
         redirect_uri:"http://localhost:5173/"
       }}
-      audience="http://localhost:8000"
+      audience={import.meta.env.VITE_AUTH0_AUDIENCE}
       scope="openid profile email"
     >
       <App />
