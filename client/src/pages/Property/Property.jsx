@@ -40,7 +40,6 @@ const Property = () => {
 
   // Check if facilities exist
   const facilities = data?.facilities || {};
-
   return (
     <div className="wrapper">
       <div className="flexColStart paddings innerWidth property-container">
@@ -54,28 +53,16 @@ const Property = () => {
             <div className="flexStart head">
               <span className="primaryText">{data?.title}</span>
               <span className="orangeText" style={{ fontSize: "1.5rem" }}>
-                ₹ {data?.price} 
+                ₹ {data?.price}.55 Cr Onwards
               </span>
             </div>
 
-            {/* facilities */}
+            {/* facilities And Basic Details */}
             <div className="flexStart facilities">
-              {/* Bathrooms */}
-              <div className="flexStart facility">
-                <FaShower size={20} color="#1F3E72" />
-                <span>{facilities.bathrooms || 0} Bathrooms</span>
-              </div>
-
-              {/* Parkings */}
-              <div className="flexStart facility">
-                <AiTwotoneCar size={20} color="#1F3E72" />
-                <span>{facilities.parkings || 0} Parkings</span>
-              </div>
-
               {/* Bedrooms */}
               <div className="flexStart facility">
                 <MdMeetingRoom size={20} color="#1F3E72" />
-                <span>{facilities.bedrooms || 0} Bedrooms</span>
+                <span>{facilities[0].bedrooms || 0} Bedrooms</span>
               </div>
             </div>
 
@@ -92,10 +79,15 @@ const Property = () => {
               </span>
             </div>
             {/* Booking Button */}
-            <button onClick={() => navigate("/sendMessage", { replace: true })} className="button bookingButton">Book Your Visit</button>
+            <button
+              onClick={() => navigate("/sendMessage", { replace: true })}
+              className="button bookingButton"
+            >
+              Book Your Visit
+            </button>
             <h3>Click to Download Brochure</h3>
             {/* Download Brochure */}
-            <DownloadPDF/>
+            <DownloadPDF />
           </div>
 
           {/* right */}
