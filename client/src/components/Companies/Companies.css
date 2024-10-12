@@ -1,7 +1,42 @@
-.c-container {
-    justify-content: space-around;
-    gap: 1rem;
+* {
+    box-sizing: border-box;
 }
-.c-container>img{
-    width: 9rem;
+
+.c-wrapper {
+    overflow: hidden; /* Hides the overflow */
+    position: relative;
+    width: 100%;
+}
+
+.c-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.carousel {
+    display: flex;
+    animation: scroll 10s linear infinite; /* Change the duration for speed */
+}
+
+.carousel img {
+    width: auto; /* Set width to auto to maintain aspect ratio */
+    height: 100px; /* Fixed height to maintain uniformity */
+    max-width: 100%; /* Prevent overflow */
+    margin: 0 10px; /* Space between images */
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%); /* Adjust to half the total width for seamless scrolling */
+    }
+}
+
+@media (max-width: 600px) {
+    .carousel img {
+        height: 80px; /* Smaller fixed height for mobile */
+    }
 }
