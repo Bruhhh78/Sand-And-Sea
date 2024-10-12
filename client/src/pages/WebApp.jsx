@@ -13,7 +13,7 @@ const WebApp = () => {
     <div className="App">
     <div>
       <div className="white-gradient" />
-      <Hero />
+      <Hero/>
     </div>
     <Companies />
     <Residencies />

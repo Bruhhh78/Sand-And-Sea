@@ -6,8 +6,8 @@ import SearchBar from "../SearchBar/SearchBar";
 
 const Hero = () => {
   return (
-    <section className="hero-wrapper">
-      <div className="paddings innerWidth flexCenter hero-container">
+    <section className="hero-wrapper" >
+      <div className="paddings innerWidth flexCenter hero-container" >
         {/* Left Side */}
         <div className="flexColStart hero-left">
           <div className="hero-title">

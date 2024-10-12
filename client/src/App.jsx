@@ -24,7 +24,7 @@ const App = () => {
     <UserDetailContext.Provider value={{ userDetails, setUserDetails }}>
       <QueryClientProvider client={queryClient}>
         <BrowserRouter>
-          <Suspense fallback={<div>Loading...</div>}>
+          {/* <Suspense fallback={<div>Loading...</div>}> */}
             <Routes>
               <Route element={<Layout />}>
                 <Route path="/" element={<WebApp />}></Route>
@@ -35,7 +35,7 @@ const App = () => {
                 <Route path="/sendMessage" element={<ContactForm/>}/>
               </Route>
             </Routes>
-          </Suspense>
+          {/* </Suspense> */}
         </BrowserRouter>
         <ToastContainer />
       </QueryClientProvider>
