@@ -11,11 +11,14 @@ dotenv.config(); // Load environment variables
 const app = express();
 const PORT = process.env.PORT || 3000;
 
+// Middleware setup
 app.use(express.json()); // Parse JSON bodies
 app.use(cookieParser()); // Parse cookies
+
+// CORS configuration
 app.use(cors({
-  origin: "https://sand-and-sea-frontend.vercel.app/", // Frontend URL
-  credentials: true,
+  origin: "https://sand-and-sea-iota.vercel.app", // Allow specific frontend URL
+  credentials: true, // Allow credentials (cookies, authorization headers)
 }));
 
 app.get("/", (req, res) => {
@@ -23,6 +26,7 @@ app.get("/", (req, res) => {
   res.send("Hello World!");
 });
 
+// API routes
 app.use("/api/user", userRoute);
 app.use("/api/residency", residencyRoute);
 
