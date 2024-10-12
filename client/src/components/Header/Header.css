@@ -1,4 +1,4 @@
-.h-wrapper {
+.h-wrapper { 
     /* background: var(--black); */
     z-index: 99;
 }
@@ -14,7 +14,7 @@
     gap: 2rem;
 }
 
-.h-menu>*:hover {
+.h-menu > *:hover {
     cursor: pointer;
 }
 
@@ -24,7 +24,7 @@
 
 @media (max-width: 768px) {
     .menu-icon {
-        display: block;
+        display: flex; /* Change to flex to show the icon */
         cursor: pointer;
     }
 
@@ -33,7 +33,7 @@
         color: var(--black);
         position: absolute;
         top: 3rem;
-        right: 4rem;
+        right: -100%; /* Start off-screen */
         background: white;
         flex-direction: column;
         font-weight: 500;
@@ -42,6 +42,11 @@
         border-radius: 10px;
         align-items: flex-start;
         box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.05);
-        transition: all 300ms ease-in;
+        transition: right 300ms ease-in; /* Transition only the right property */
+    }
+
+    /* When menu is opened */
+    .h-menu.open {
+        right: 4rem; /* Adjust to desired position when opened */
     }
 }

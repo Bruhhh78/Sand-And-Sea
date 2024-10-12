@@ -7,10 +7,9 @@ import { Link, NavLink } from "react-router-dom";
 const Header = () => {
   const [menuOpened, setMenuOpened] = useState(false);
 
-  const getMenuStyles = (menuOpened) => {
-    if (document.documentElement.clientWidth <= 800) {
-      return { right: !menuOpened && "-100%" };
-    }
+  // Toggle menu opening and closing
+  const toggleMenu = () => {
+    setMenuOpened((prev) => !prev);
   };
 
   return (
@@ -32,15 +31,17 @@ const Header = () => {
             setMenuOpened(false);
           }}
         >
-          <div className="flexCenter h-menu" style={getMenuStyles(menuOpened)}>
+          <div className={`flexCenter h-menu ${menuOpened ? "open" : ""}`}>
             <NavLink to="/properties">Properties</NavLink>
-            <button className="button"><a href="mailto:marketingsandnsea@gmail.com">Contact</a></button>
+            <button className="button">
+              <a href="mailto:marketingsandnsea@gmail.com">Contact</a>
+            </button>
           </div>
         </OutsideClickHandler>
 
         <div
           className="menu-icon"
-          onClick={() => setMenuOpened((prev) => !prev)}
+          onClick={toggleMenu}
         >
           <BiMenuAltRight size={30} />
         </div>
