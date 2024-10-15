@@ -1,5 +1,6 @@
 import React from "react";
 import "./Footer.css";
+import { NavLink } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -21,10 +22,8 @@ const Footer = () => {
           <span>Mumbai, Maharashtra</span>
 
           <div className="flexCenter f-menu">
-            <span>Property</span>
-            <span>Services</span>
-            <span>Product</span>
-            <span>About Us</span>
+            <NavLink to="/properties">Properties</NavLink>
+            <NavLink to="https://www.linkedin.com/company/sand-sea-realty-venturellp/about/">About Us</NavLink>
           </div>
         </div>
       </div>
