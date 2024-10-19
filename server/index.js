@@ -17,7 +17,7 @@ app.use(cookieParser()); // Parse cookies
 
 // CORS configuration
 app.use(cors({
-  origin: "https://sand-and-sea-iota.vercel.app/", // Frontend URL without trailing slash
+  origin: "https://sand-and-sea-iota.vercel.app", // Frontend URL without trailing slash
   credentials: true
 }));
 
