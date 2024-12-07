@@ -17,7 +17,7 @@ app.use(cookieParser()); // Parse cookies
 
 // CORS configuration
 app.use(cors({
-  origin: "https://sandnsearealty.com/", // Frontend URL without trailing slash
+  origin: "https://sandnsearealty.com", // Frontend URL without trailing slash
   credentials: true
 }));
 
